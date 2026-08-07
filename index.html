@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiDi Garage Door Inc | Luxury Door & Security Experts</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#D4AF37',
+                            600: '#AA7C11',
+                            700: '#8B6508'
+                        },
+                        dark: {
+                            900: '#0B0D12',
+                            800: '#131722',
+                            700: '#1C2232',
+                            600: '#283147'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-card {
+            background: rgba(19, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+        }
+        .bg-gold-gradient:hover {
+            background: linear-gradient(135deg, #E5BE3E 0%, #C49118 100%);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, rgba(11, 13, 18, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-dark-900 overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-dark-800 border-b border-gray-800/60 text-xs py-2.5 px-6 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-gray-400">
+            <div class="flex items-center space-x-6">
+                <a href="tel:5857333029" class="hover:text-gold-500 transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-gold-500"></i> (585) 733-3029
+                </a>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-gold-500"></i> Rochester, NY 14612
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-gold-500"></i> Mon - Sat : 24 / 7
+                </span>
+            </div>
+            <div class="flex items-center gap-2 text-gold-500 font-semibold">
+                <i class="fa-solid fa-shield-halved"></i> Licensed & Insured Garage Door Experts
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <header class="sticky top-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-gray-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3">
+                <img src="https://didigaragedoor.com/wp-content/uploads/2024/09/Logo.png" alt="DiDi Garage Door Inc Logo" class="h-12 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="text-gold-500 hover:text-gold-400 transition">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-gold-500 transition">About</a>
+                <a href="#services" class="text-gray-300 hover:text-gold-500 transition">Services</a>
+                <a href="#reviews" class="text-gray-300 hover:text-gold-500 transition">Reviews</a>
+                <a href="#contact" class="text-gray-300 hover:text-gold-500 transition">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-gold-gradient text-dark-900 font-bold px-6 py-2.5 rounded-full text-sm shadow-lg shadow-gold-500/10 hover:shadow-gold-500/25 transition transform hover:-translate-y-0.5">
+                    Get A Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-gold-500 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-gray-800 px-6 py-6 space-y-4">
+            <a href="#home" class="block text-gold-500 font-medium mobile-link">Home</a>
+            <a href="#about" class="block text-gray-300 hover:text-gold-500 font-medium mobile-link">About</a>
+            <a href="#services" class="block text-gray-300 hover:text-gold-500 font-medium mobile-link">Services</a>
+            <a href="#reviews" class="block text-gray-300 hover:text-gold-500 font-medium mobile-link">Reviews</a>
+            <a href="#contact" class="block text-gray-300 hover:text-gold-500 font-medium mobile-link">Contact</a>
+            <a href="#contact" class="block text-center bg-gold-gradient text-dark-900 font-bold py-3 rounded-full text-sm mt-4">
+                Get A Quote
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative py-28 md:py-36 overflow-hidden hero-glow">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wider uppercase">
+                    <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span> Premium Door & Gate Engineering
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold font-serif leading-tight text-white">
+                    Stronger Gates. <br>
+                    <span class="text-gold-gradient">Smarter Security.</span> <br>
+                    Faster Repairs.
+                </h1>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    At DiDi Garage Door Inc, we deliver trusted commercial & residential security solutions, heavy-duty rolling gates, electric motor automation, and 24/7 emergency repair.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#contact" class="bg-gold-gradient text-dark-900 font-bold px-8 py-4 rounded-full text-center text-base shadow-xl shadow-gold-500/20 hover:shadow-gold-500/40 transition transform hover:-translate-y-1">
+                        Contact Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="tel:5857333029" class="bg-dark-800 border border-gray-700 text-gray-200 font-semibold px-8 py-4 rounded-full text-center text-base hover:bg-dark-700 hover:border-gold-500/50 transition">
+                        <i class="fa-solid fa-phone text-gold-500 mr-2"></i> (585) 733-3029
+                    </a>
+                </div>
+                <div class="pt-6 flex items-center gap-6 border-t border-gray-800/80">
+                    <div>
+                        <div class="text-2xl font-bold text-white">5.0 <span class="text-gold-500 text-lg">★ ★ ★ ★ ★</span></div>
+                        <div class="text-xs text-gray-400">Based on 2,100+ Reviews</div>
+                    </div>
+                    <div class="h-8 w-px bg-gray-800"></div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">100%</div>
+                        <div class="text-xs text-gray-400">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Feature Card -->
+            <div class="relative">
+                <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-gold-500/30 to-amber-700/30 blur-2xl opacity-50"></div>
+                <div class="relative rounded-3xl glass-card p-8 space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 text-2xl border border-gold-500/20">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg">Rapid Response Guaranteed</h3>
+                            <p class="text-gray-400 text-sm">Emergency repairs & installations</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        We prioritize property safety with long-lasting materials and high-precision motor systems designed for smooth daily operation.
+                    </p>
+                    <div class="bg-dark-800/80 rounded-xl p-4 border border-gray-800 space-y-2">
+                        <div class="flex justify-between text-xs text-gray-400">
+                            <span>Service Execution Rate</span>
+                            <span class="text-gold-500 font-bold">99.8%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-gold-gradient h-full w-[99.8%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-dark-800/50 border-y border-gray-800/80 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="text-gold-500 text-sm font-semibold tracking-widest uppercase">About Us</div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-serif text-white leading-tight">
+                        Your Trusted Door & <br><span class="text-gold-gradient">Security Experts</span>
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        At DiDi Garage Door Inc, we provide reliable garage door and security solutions with expert craftsmanship, fast service, and a commitment to keeping your property safe and secure.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Get to know DiDi Garage Door Inc, where experience meets reliability in every service we provide. We are dedicated to delivering trusted garage door and security solutions with a focus on quality and total customer satisfaction.
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-dark-900 border border-gray-800">
+                            <i class="fa-solid fa-wrench text-gold-500 text-xl mb-2"></i>
+                            <h4 class="text-white font-bold text-sm">Precision Work</h4>
+                            <p class="text-gray-400 text-xs mt-1">High craftsmanship standards on every project.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-dark-900 border border-gray-800">
+                            <i class="fa-solid fa-clock-rotate-left text-gold-500 text-xl mb-2"></i>
+                            <h4 class="text-white font-bold text-sm">24/7 Availability</h4>
+                            <p class="text-gray-400 text-xs mt-1">Fast turnaround to minimize downtime.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="glass-card p-8 rounded-2xl relative z-10 space-y-6">
+                        <h3 class="text-xl font-bold text-white font-serif">How Our Service Works</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 flex-shrink-0 flex items-center justify-center font-bold text-sm border border-gold-500/30">01</div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Request Service</h4>
+                                    <p class="text-gray-400 text-xs mt-1">Contact us with your issue or installation need, and our team will quickly respond to schedule an inspection.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 flex-shrink-0 flex items-center justify-center font-bold text-sm border border-gold-500/30">02</div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Inspection & Solution</h4>
+                                    <p class="text-gray-400 text-xs mt-1">We assess the problem on-site and provide a clear, affordable solution tailored to your requirements.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 flex-shrink-0 flex items-center justify-center font-bold text-sm border border-gold-500/30">03</div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Repair or Installation</h4>
+                                    <p class="text-gray-400 text-xs mt-1">Our experts complete the work efficiently, ensuring your garage door or system is fully secure and functioning perfectly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <div class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Our Offerings</div>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-white">What We Offer</h2>
+                <p class="text-gray-400 text-sm">
+                    Our skilled team handles everything from emergency repairs to advanced entry system installations with precision, care, and long-term durability.
+                </p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://avatars.mds.yandex.net/i?id=ba89845aa29f51773d104b826c94161994089c15-5235436-images-thumbs&n=13" 
+                             alt="Rolling Steel Gates" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-white font-serif group-hover:text-gold-500 transition">Rolling Steel Gates</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Durable rolling steel gate solutions built for maximum security, extreme strength, and long-lasting heavy industrial use.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 font-semibold text-sm hover:text-gold-400 pt-2">
+                            Request Quote <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://avatars.mds.yandex.net/i?id=85bbc813b53aca646e3bffb402d62b22b762e9b9-9068854-images-thumbs&n=13" 
+                             alt="Electric Motors" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-white font-serif group-hover:text-gold-500 transition">Electric Motors</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            High-quality electric motor installation, calibration, and repair services to ensure efficient, smooth, and dependable door performance.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 font-semibold text-sm hover:text-gold-400 pt-2">
+                            Request Quote <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://yandex-images.clstorage.net/edj974e18/c9307erDxS5B/G51rq70Yue9SZT6ZeAgn7wCXejcD2UEJgQUvMLj584poJEDNJEH8PABwwsAhowqtnzVNIEmZaOW6WrleB3VasVq5rx-MrUy786B-GUhYBjrUpmvyo5yQraTA7gA4WTP_HuL3WgNHjppXwtXHhWMPKErhXLU8_M5Taz-pPpd2XUOqD4jrqwrpTFf2bSs6qwS58kQJoaLugcnX4q2l2gwVmD6QpNswdF8JVmO3lzaiHmhY8jl3_H6fgRyvm-53hx5wC49ae_hqGp_kJE0rKuqEufBmO2CzzfLLdDK8VakuVbl_IKUa89QeSCew1nWWEL7oyIIKJ64dPRPNz5oMhbQ-UpgPWBp6yjuOhZU-ubiLNEqBVopykG5z6OfxXmQrL4Saz6GUaGPF7PrXMvZ2B1MN-ZryKXZ8nV8zjW-YXsWlrfEYHNp7ulkqLpQFzOk4iyVZAPSp8NFfIphX0b9lKd22m72QRBtjlu7qRCHmR6fDz6tpk9rVrv1sMd-Pml1FlJyAquwZChj7OdwU5AwL6IknaXC2W1ND_4NLZbNsNQquNfgeU8cawuSMKHeAhkc24f06y5CrBx0sb0ENfnuOR2cMQ2nOOdvJGwveBpbdKTjrJhrCtQpTYwyim9RQnkeaXfaZjkB0eVNVPWs0AeRllAN_-whiGOUsbn-Tr_-5vnVl7VM5v_ra-Jir7BY3D4r42sYK4VVrkpAN8BsXsO80KFw0KGwCFWpBRu0o1bBXB5fgTzjLsqs2Tn5uwF4Oqwz1hq5zSv_p--kZKA9HJI27OFgXeaE1SVLBz4K5dcF8B5hvlhqv0yTq4Cf-6uTCx4X2cX142xOapG9-LTOevKs_lbXNYJqs2nvLiEiOBBYNyMgaV-jz12gzwF0w-TZSXBSozHRqTSHlilMVLeo3wPfmJMJ9CEghWoROLb2Qb47L3senjGJpzOuLGrkJXPX2jcnIuWcYwIQpIME_0LpWE712I" 
+                             alt="Security Systems" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-white font-serif group-hover:text-gold-500 transition">Security Systems</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Advanced security system and commercial entry installations designed to safeguard your property and enhance overall safety.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 font-semibold text-sm hover:text-gold-400 pt-2">
+                            Request Quote <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-dark-800/40 border-y border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <div class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Testimonials</div>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-white">What Our Clients Say</h2>
+                <p class="text-gray-400 text-sm">
+                    Hear from real home and business owners in Rochester who trust DiDi Garage Door Inc.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-gold-500 text-sm">★ ★ ★ ★ ★</div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">
+                            "DiDi Garage Door fixed our heavy commercial rolling steel gate within hours after it broke down. Highly professional team, upfront pricing, and top quality work!"
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 flex items-center justify-center font-bold">MR</div>
+                        <div>
+                            <div class="text-white text-sm font-bold">Michael R.</div>
+                            <div class="text-gray-500 text-xs">Rochester, NY</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-gold-500 text-sm">★ ★ ★ ★ ★</div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">
+                            "Upgraded our automated garage door motor and added security keypads. Smooth, whisper-quiet operation now. Best garage door company in the area hands down!"
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 flex items-center justify-center font-bold">SK</div>
+                        <div>
+                            <div class="text-white text-sm font-bold">Sarah K.</div>
+                            <div class="text-gray-500 text-xs">Brighton, NY</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-gold-500 text-sm">★ ★ ★ ★ ★</div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">
+                            "Emergency response on a weekend! They had all parts on hand and restored our security gates seamlessly. Fair prices and zero hassle."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 flex items-center justify-center font-bold">DV</div>
+                        <div>
+                            <div class="text-white text-sm font-bold">David V.</div>
+                            <div class="text-gray-500 text-xs">Greece, NY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <div class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Get In Touch</div>
+                        <h2 class="text-3xl md:text-4xl font-bold font-serif text-white mt-2">Give Us A Shout For A Free Quote!</h2>
+                        <p class="text-gray-400 text-sm mt-3">
+                            Reach out today for emergency repair requests, gate installations, or motor consultations.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-500 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Phone</div>
+                                <a href="tel:5857333029" class="text-white font-semibold hover:text-gold-500 transition">(585) 733-3029</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-500 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Email</div>
+                                <a href="mailto:didigaragedoorinc@gmail.com" class="text-white font-semibold hover:text-gold-500 transition">didigaragedoorinc@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-500 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Location</div>
+                                <div class="text-white font-semibold">Rochester, NY 14612</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <form onsubmit="event.preventDefault(); alert('Thank you for your message! DiDi Garage Door will contact you shortly.');" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider font-medium mb-1">Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-dark-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider font-medium mb-1">Phone</label>
+                                <input type="tel" required placeholder="(585) 000-0000" class="w-full bg-dark-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider font-medium mb-1">Email</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full bg-dark-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider font-medium mb-1">Subject</label>
+                            <input type="text" placeholder="Garage Door Repair / Installation" class="w-full bg-dark-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider font-medium mb-1">Message</label>
+                            <textarea rows="4" required placeholder="Tell us about your issue..." class="w-full bg-dark-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gold-gradient text-dark-900 font-bold py-3.5 rounded-lg text-sm shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800 border-t border-gray-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-4 gap-10">
+            
+            <!-- Col 1: Brand -->
+            <div class="space-y-4 lg:col-span-1">
+                <img src="https://didigaragedoor.com/wp-content/uploads/2024/09/Logo.png" alt="DiDi Garage Door Inc" class="h-12 w-auto">
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    DiDi Garage Door Inc delivers trusted garage door and security solutions with reliable service and expert craftsmanship in Rochester, NY.
+                </p>
+                <div class="text-xs text-gray-500 pt-2">
+                    © 2026 DiDi Garage Door Inc. All Rights Reserved.
+                </div>
+            </div>
+
+            <!-- Col 2: Navigation Links -->
+            <div>
+                <h4 class="text-white font-serif font-bold text-sm uppercase tracking-wider mb-4 border-l-2 border-gold-500 pl-3">Navigation</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#home" class="hover:text-gold-500 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-gold-500 transition">About Us</a></li>
+                    <li><a href="#services" class="hover:text-gold-500 transition">Services</a></li>
+                    <li><a href="#reviews" class="hover:text-gold-500 transition">Customer Reviews</a></li>
+                    <li><a href="#contact" class="hover:text-gold-500 transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Services Links -->
+            <div>
+                <h4 class="text-white font-serif font-bold text-sm uppercase tracking-wider mb-4 border-l-2 border-gold-500 pl-3">Services</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#services" class="hover:text-gold-500 transition">Rolling Steel Gates</a></li>
+                    <li><a href="#services" class="hover:text-gold-500 transition">Electric Motors</a></li>
+                    <li><a href="#services" class="hover:text-gold-500 transition">Security Systems</a></li>
+                    <li><a href="#services" class="hover:text-gold-500 transition">Emergency Repair</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Google Maps GMB Embed -->
+            <div class="space-y-3">
+                <h4 class="text-white font-serif font-bold text-sm uppercase tracking-wider border-l-2 border-gold-500 pl-3">Find Us On GMB</h4>
+                <div class="rounded-xl overflow-hidden border border-gray-700 shadow-md">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77697.51351605883!2d-77.616399!3d43.18617605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ec091d85cfdd99b%3A0x3acdfc6cf323cc07!2sDIDI%20GARAGE%20DOOR%20INC!5e1!3m2!1sen!2s!4v1786134845756!5m2!1sen!2s" 
+                            width="100%" 
+                            height="180" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
